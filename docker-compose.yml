@@ -8,6 +8,7 @@ services:
       - "3000:3000"
     depends_on:
       - bargain-hand-be
+  # DON'T change the name of the backend service!
   bargain-hand-be:
     container_name: bargain-hand-be
     image: olilu/the-bargain-hand-be:latest
