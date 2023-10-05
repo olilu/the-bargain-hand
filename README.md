@@ -1,5 +1,5 @@
 # The Bargain Hand
-The Bargain Hand is a web application for scraping game prices in the Nintendo eShop and the PlayStation Store for bargains. 
+The Bargain Hand is a web application for scraping game prices in the Nintendo eShop and the PlayStation Store for bargains. You can manage your own wishlist in a web UI and get email alerts once they are on sale.
 ## Getting Started
 In this repository you will find all the ressources necessary to spin up your own Bargain Hand application with Docker. Follow the few steps below and start bargain hunting in the Nintendo eShop and the PlayStation Store.
 
