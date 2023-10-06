@@ -1,5 +1,14 @@
-# The Bargain Hand
+# The Bargain Hand 🫳
 The Bargain Hand is a web application for scraping game prices in the Nintendo eShop and the PlayStation Store for bargains. You can manage your own wishlist in a web UI and get email alerts when your games are on sale.
+
+It is built with FastAPI, React and PostgreSQL and can be deployed with Docker.
+
+## Features
+* Create wishlists for Nintendo Switch and PlayStation games
+* Add games to your wishlists by searching for them in the Nintendo eShop or the PlayStation Store
+* Receive email alerts when the price of a game in your wishlist drops
+* Prices are checked automatically every 12 hours
+
 ## Getting Started
 In this repository you will find all the ressources necessary to spin up your own Bargain Hand application with Docker. Follow the few steps below and start bargain hunting in the Nintendo eShop and the PlayStation Store.
 
@@ -30,12 +39,14 @@ docker compose up -d
 # Example for local installation with default port 3000:
 http://localhost:3000
 ```
-## Usage Advice
+## Limitations and Usage Advice
 * The Bargain Hand supports different locations, though not all of them are tested. Following country and language settings are tested:
     - CH_de
     - CH_fr
     - GB_en
     - DE_de
-* For all countries not using the European Nintendo eShop version, the UI will not display any pictures for Nintendo games. This is due to Nintendo basically running 3 different shops, which makes the "european" image scraper fail for the other shop regions. 
+    - FR_fr
+* For all countries not using the European Nintendo eShop version, the UI will not display any pictures for Nintendo games. This is due to Nintendo basically running 3 different shops, which makes the "European" image scraper fail for the other shop regions. 
     - Big shout out at this point to @fedecalendino the creator of [Nintendeals](https://pypi.org/project/nintendeals/) for creating a price scraper for ALL Nintendo eShop regions! The Bargain Hand heavily relies on this module.
-* Don't create wishlists with different country settings on the same Bargain Hand instance. If you do, the price alerting should still work, but the links to the games in the UI and the emails might point to the wrong store region.
+* Do not create wishlists with different country settings on the same Bargain Hand instance. If you do, the price alerting should still work, but the links to the games in the UI and the emails might point to the wrong store region. You might also experience other unexpected behaviour.
+* It is possible though to change your language and country settings on an existing wishlist without having to recreate it. You then need to request a price check manually over the UI for the price information to update. This might trigger a price alert because the price check doesn't distinguish between price drops due to currency changes, actual sales or other magical reasons.
