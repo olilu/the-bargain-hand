@@ -1,4 +1,4 @@
-# The Bargain Hand 🫳
+# The Bargain Hand
 The Bargain Hand is a web application for scraping game prices in the Nintendo eShop and the PlayStation Store for bargains. You can manage your own wishlist in a web UI and get email alerts when your games are on sale.
 
 It is built with FastAPI, React and PostgreSQL and can be deployed with Docker.
@@ -50,3 +50,8 @@ http://localhost:3000
     - Big shout out at this point to @fedecalendino the creator of [Nintendeals](https://pypi.org/project/nintendeals/) for creating a price scraper for ALL Nintendo eShop regions! The Bargain Hand heavily relies on this module.
 * Do not create wishlists with different country settings on the same Bargain Hand instance. If you do, the price alerting should still work, but the links to the games in the UI and the emails might point to the wrong store region. You might also experience other unexpected behaviour.
 * It is possible though to change your language and country settings on an existing wishlist without having to recreate it. You then need to request a price check manually over the UI for the price information to update. This might trigger a price alert because the price check doesn't distinguish between price drops due to currency changes, actual sales or other magical reasons.
+
+## Screenshots
+  <img src="https://github.com/olilu/the-bargain-hand/assets/42400127/dd298d09-5f8c-4dbf-82dc-9a020feb42bc" width="750">
+  <img src="https://github.com/olilu/the-bargain-hand/assets/42400127/abc36b56-3310-40c5-8e9f-8dc327d49147" width="750">
+  <img src="https://github.com/olilu/the-bargain-hand/assets/42400127/afab6ae7-2917-4fcf-ad19-0c231b52dcc9" width="750">
